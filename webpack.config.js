@@ -1,5 +1,6 @@
 module.exports = {
     entry: "./src/index.js",
+    devtool: "source-map",
     output: {
         path: __dirname,
         filename: "./bundle.js"
@@ -14,9 +15,9 @@ module.exports = {
             {
                 test: /\.js$/,
                 exclude: [/node_modules/, /typings/],
-                loader: "babel",
+                loader: "babel-loader",
                 query: {
-                    presets: ["es2015", "react"]
+                    presets: ["es2015", "react", "stage-1"]
                 }
             },
             {
